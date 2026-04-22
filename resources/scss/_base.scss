@@ -1,0 +1,100 @@
+@use "tokens" as *;
+
+@font-face {
+    font-family: "Druk Cyr";
+    src: url("../fonts/druk-cyr-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $color-text;
+    background-color: $color-bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-headings;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+.section {
+    padding: 52px 0;
+}
+
+.title {
+    margin: 0 0 $space-md;
+    font-family: $font-family-headings;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.title--xl {
+    font-size: 80px;
+    max-width: 320px;
+}
+
+.title--lg {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    max-width: 620px;
+}
+
+@media (max-width: $bp-xl) {
+    .title--xl {
+        font-size: clamp(2.6rem, 7vw, 80px);
+    }
+}
+
+.lead {
+    margin: 0 0 20px;
+    color: rgba($color-text, 0.72);
+    max-width: 380px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.breadcrumbs {
+    margin: 0 0 14px;
+    color: rgba($color-text, 0.55);
+    font-size: 0.68rem;
+}
+
+.media {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.media--large {
+    min-height: 320px;
+}
+
+.section--benefits,
+.section--final {
+    background-color: $color-bg;
+}

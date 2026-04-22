@@ -1,0 +1,483 @@
+@use "tokens" as *;
+
+.container {
+    width: min(100% - ($container-padding-x * 2), $container-max-width);
+    max-width: none;
+    padding-inline: 0;
+    margin-inline: auto;
+}
+
+.hero {
+    padding-top: 14px;
+    padding-bottom: 28px;
+}
+
+.hero__grid {
+    display: grid;
+    gap: 44px;
+    grid-template-columns: 330px minmax(0, 1fr);
+    align-items: start;
+}
+
+.hero__cards {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, minmax(0, 180px));
+    justify-content: start;
+}
+
+.category-card {
+    padding: 12px 11px 0;
+    background-color: $color-surface;
+    min-height: 176px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.category-card__title {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 500;
+    min-height: 2.35em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.category-card__badge {
+    margin: 0;
+    background-color: #96ce06;
+    font-size: 9px;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: fit-content;
+    padding: 2px 8px;
+}
+
+.category-card__image {
+    margin-top: auto;
+    width: 100%;
+    margin-bottom: 0;
+    max-height: 108px;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+.hero__cards .category-card:nth-child(1) .category-card__image {
+    max-height: 136px;
+}
+
+.hero__cards .category-card:nth-child(2) .category-card__image {
+    max-height: 142px;
+}
+
+.hero__cards .category-card:nth-child(3) .category-card__image {
+    max-height: 128px;
+}
+
+.hero__cards .category-card:nth-child(4) .category-card__image {
+    max-height: 134px;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.split--media-right {
+    grid-template-columns: minmax(0, 40%) minmax(0, 36%);
+    justify-content: start;
+    gap: 34px;
+
+    .split__content {
+        order: 1;
+    }
+
+    .media {
+        order: 2;
+    }
+
+    .check-list {
+        margin-bottom: 92px;
+    }
+
+    .btn--secondary {
+        margin-top: 6px;
+    }
+}
+
+.split__content {
+    padding-top: $space-xs;
+}
+
+.hero__content .btn--primary {
+    min-width: 190px;
+    min-height: 40px;
+    padding: 0 26px;
+    font-size: 12px;
+}
+
+.section--object {
+    padding-top: 20px;
+    padding-bottom: 34px;
+}
+
+.section--object .container {
+    width: min(100% - 48px, 1460px);
+}
+
+.section--object .split {
+    gap: 40px;
+    grid-template-columns: minmax(0, 46.5%) minmax(0, 39%);
+    justify-content: start;
+}
+
+.section--object .media--large {
+    min-height: 0;
+    max-height: none;
+    object-fit: contain;
+    object-position: left top;
+}
+
+.section--object .title--lg {
+    font-size: 50px;
+    margin-bottom: 18px;
+    max-width: 100%;
+}
+
+.title--xl {
+    font-size: 64px;
+    line-height: 0.95;
+    max-width: none;
+}
+
+.section--object .check-list {
+    margin-bottom: 52px;
+    gap: 20px;
+}
+
+.section--object .btn--secondary {
+    margin-top: 8px;
+}
+
+.split__content--compact .title {
+    margin-bottom: $space-sm;
+}
+
+.check-list {
+    margin: 0 0 $space-lg;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: $space-lg;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 34px;
+}
+
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background-color: #96ce06;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.check-list h3 {
+    margin: 0 0 $space-xs;
+    line-height: 1.15;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: $font-family-base;
+    text-transform: none;
+}
+
+.check-list p {
+    margin: 0;
+    color: $color-muted;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-xs;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 0;
+    border: 1px solid transparent;
+    font-weight: 700;
+    text-transform: none;
+    cursor: pointer;
+    min-width: 148px;
+    font-size: 0.8rem;
+}
+
+.btn--primary {
+    color: #111;
+    background-color: #96ce06;
+}
+
+.btn--secondary {
+    color: #fff;
+    background-color: #5638fa;
+    min-width: 200px;
+    padding: 0 30px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $space-md;
+}
+
+.section--benefits .container {
+    display: grid;
+    grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
+    gap: 26px;
+    align-items: start;
+}
+
+.section--benefits .title--lg {
+    margin: 0;
+    max-width: 100%;
+}
+
+.benefit-card {
+    background-color: $color-surface;
+    padding: $space-lg;
+    min-height: 245px;
+}
+
+.benefit-card__index {
+    margin: 0 0 $space-md;
+    font-size: 2rem;
+    color: #5638fa;
+    font-weight: 800;
+    font-family: $font-family-headings;
+}
+
+.benefit-card__title {
+    margin: 0 0 $space-sm;
+    text-transform: uppercase;
+    font-size: clamp(1.25rem, 1.4vw, 1.7rem);
+    line-height: 1.12;
+    letter-spacing: 0;
+}
+
+.benefit-card__text {
+    margin: 0;
+    color: $color-muted;
+}
+
+.before-after {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    position: relative;
+}
+
+.before-after__card {
+    position: relative;
+}
+
+.before-after__handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 3;
+    pointer-events: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.before-after__handle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.before-after__handle-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.before-after__handle-side--left {
+    background-color: rgba(42, 48, 58, 0.38);
+    padding-right: 1px;
+}
+
+.before-after__handle-side--right {
+    background-color: rgba(255, 255, 255, 0.22);
+    padding-left: 1px;
+}
+
+.media--before-after {
+    height: 680px;
+}
+
+.before-after__label {
+    position: absolute;
+    left: $space-lg;
+    bottom: $space-lg;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 1.5vw, 1.75rem);
+    font-weight: 900;
+}
+
+.before-after__label--right {
+    left: auto;
+    right: $space-lg;
+}
+
+.process-list {
+    margin: 0 0 $space-lg;
+    padding-left: $space-md;
+    display: grid;
+    gap: 5px;
+}
+
+.process-list li {
+    font-size: 0.95rem;
+    color: rgba($color-text, 0.88);
+}
+
+.final-banner {
+    margin: 0;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    padding: 14px $space-xl;
+    background-color: #96ce06;
+    color: #101010;
+    font-family: $font-family-headings;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+@media (max-width: $bp-xl) {
+    .hero__grid {
+        grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.55fr);
+    }
+
+    .category-card__title {
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: $bp-lg) {
+    .section {
+        padding: $space-2xl 0;
+    }
+
+    .hero__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .media--large {
+        min-height: 280px;
+        max-height: 420px;
+    }
+
+    .media--before-after {
+        height: 470px;
+    }
+
+    .benefit-card__title {
+        font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+    }
+
+    .section--benefits .container {
+        grid-template-columns: 1fr;
+        gap: $space-lg;
+    }
+}
+
+@media (max-width: $bp-md) {
+    .hero__cards,
+    .benefits-grid,
+    .before-after {
+        grid-template-columns: 1fr;
+    }
+
+    .check-list h3 {
+        font-size: clamp(1.05rem, 5vw, 1.35rem);
+    }
+
+    .before-after__label,
+    .before-after__label--right {
+        right: auto;
+        left: $space-md;
+        bottom: $space-md;
+    }
+
+    .before-after__handle {
+        display: none;
+    }
+}
+
+@media (max-width: $bp-sm) {
+    .container {
+        width: min(100% - 24px, $container-max-width);
+    }
+
+    .category-card {
+        min-height: 220px;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: 0;
+    }
+}

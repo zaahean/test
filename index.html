@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меблировка по выгодной цене</title>
+    <link rel="stylesheet" href="./public/assets/css/main.css">
+</head>
+<body>
+    <div id="app" class="page">
+        <header class="hero section">
+            <div class="container hero__grid">
+                <div class="hero__content">
+                    <p class="breadcrumbs">Главная / Меблировка</p>
+                    <h1 class="title title--xl">Меблировка по выгодной цене</h1>
+                    <p class="lead">Идеальный и готовый интерьер под ключ всего за 2 встречи без вашего вовлечения в процесс</p>
+                    <button class="btn btn--primary" type="button" @click="handlePrimaryCta('consultation')">
+                        Получить консультацию
+                    </button>
+                </div>
+
+                <div class="hero__cards">
+                    <article class="category-card" v-for="category in categories" :key="category.id">
+                        <p class="category-card__title">{{ category.title }}</p>
+                        <p class="category-card__badge">{{ category.badge }}</p>
+                        <img :src="category.image" :alt="category.alt" class="category-card__image">
+                    </article>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="section section--object">
+                <div class="container split split--media-left">
+                    <img :src="images.room1" alt="Гостиная с обеденной зоной" class="media media--large">
+                    <div class="split__content">
+                        <h2 class="title title--lg">Комплектация объекта</h2>
+                        <ul class="check-list">
+                            <li v-for="item in featuresPrimary" :key="item.title">
+                                <h3>{{ item.title }}</h3>
+                                <p>{{ item.text }}</p>
+                            </li>
+                        </ul>
+                        <button class="btn btn--secondary" type="button" @click="handlePrimaryCta('price')">Узнать стоимость</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container split split--media-right">
+                    <div class="split__content">
+                        <ul class="check-list">
+                            <li v-for="item in featuresSecondary" :key="item.title">
+                                <h3>{{ item.title }}</h3>
+                                <p>{{ item.text }}</p>
+                            </li>
+                        </ul>
+                        <button class="btn btn--secondary" type="button" @click="handlePrimaryCta('price-secondary')">Узнать стоимость</button>
+                    </div>
+                    <img :src="images.room2" alt="Светлая гостиная" class="media media--large">
+                </div>
+            </section>
+
+            <section class="section section--benefits">
+                <div class="container">
+                    <h2 class="title title--lg">Преимущества</h2>
+                    <div class="benefits-grid">
+                        <article class="benefit-card" v-for="benefit in benefits" :key="benefit.id">
+                            <p class="benefit-card__index">{{ benefit.id }}</p>
+                            <h3 class="benefit-card__title">{{ benefit.title }}</h3>
+                            <p class="benefit-card__text">{{ benefit.text }}</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="title title--lg">Исполняем ваши задумки на все 100%</h2>
+                    <div class="before-after">
+                        <article class="before-after__card">
+                            <img :src="images.wish" alt="Желание клиента" class="media media--before-after">
+                            <p class="before-after__label">Желание клиента</p>
+                        </article>
+                        <article class="before-after__card">
+                            <img :src="images.result" alt="Реализация" class="media media--before-after">
+                            <p class="before-after__label before-after__label--right">Реализация</p>
+                        </article>
+                        <div class="before-after__handle" aria-hidden="true">
+                            <span class="before-after__handle-side before-after__handle-side--left">◀</span>
+                            <span class="before-after__handle-side before-after__handle-side--right">▶</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--final">
+                <div class="container split split--media-left">
+                    <img :src="images.room3" alt="Интерьер гостиной с диваном" class="media media--large">
+                    <div class="split__content split__content--compact">
+                        <h2 class="title title--lg">Из чего состоит комплектация</h2>
+                        <ul class="process-list">
+                            <li v-for="item in processSteps" :key="item">{{ item }}</li>
+                        </ul>
+                        <p class="final-banner">📍 Все это и не только делаем мы сами</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="./public/assets/js/main.js"></script>
+</body>
+</html>
